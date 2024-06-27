@@ -1,17 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import './App.css';
 
-function App() {
-
+const App: React.FC = () => {
   return (
-    <div>
-      <h1>
-        Hello
-      </h1>
-    </div>
-  )
-}
+    <div className="content">
+      <button className="box left-box">
+        Left Box Content
+      </button>
 
-export default App
+      <div className="center-content">
+        <h1 className="title">Article Title</h1>
+        <h2 className="score">Score: 0</h2>
+        <span className="highscore">Highscore: 0</span>
+      </div>
+
+      <button className="box right-box">
+        Right Box Content
+      </button>
+    </div>
+  );
+};
+
+export default App;
