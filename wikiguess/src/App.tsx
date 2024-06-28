@@ -1,21 +1,29 @@
 import React from 'react';
 import './App.css';
 
-const App: React.FC = () => {
+interface ArticleInfo {
+  title: string;
+  leftContent: string;
+  rightContent: string;
+}
+
+interface AppProps {
+  articleInfo: ArticleInfo;
+}
+
+const App: React.FC<AppProps> = ({ articleInfo }) => {
   return (
     <div className="content">
       <button className="box left-box">
-        Left Box Content
+        {articleInfo.leftContent}
       </button>
-
       <div className="center-content">
-        <h1 className="title">Article Title</h1>
+        <h1 className="title">{articleInfo.title}</h1>
         <h2 className="score">Score: 0</h2>
         <span className="highscore">Highscore: 0</span>
       </div>
-
       <button className="box right-box">
-        Right Box Content
+        {articleInfo.rightContent}
       </button>
     </div>
   );
